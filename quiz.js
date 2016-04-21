@@ -1,5 +1,5 @@
 /*
-tree height is defined by a certian number of lines
+tree height is defined by a certain number of lines
 tree character is any character
 tree structure is one character plus two additional characters centered on each line
 
@@ -13,19 +13,26 @@ then place one character
 for each additional line go the same number of spaces minus two,
 then print the number of charcters printed on the last line plus two more
 
- - so step two - console.log(treeHeight - two + "treeCharacter + 2")
+ - so step two - console.log(treeHeight - one + "treeCharacter + 1")
 
-keep pirnting in this pattern for the required number of lines
+keep printing in this pattern for the required number of lines
 
 - repeat step two until it reaches the line height needed -
 */
+
 function tree() {
-
-var height = document.getElementById("treeHeight - 1");
-var character = document.getElementById("treeCharacter");
-
-var heightSubmit = document.getElementById("treeHeight").value;
-var charSubmit = document.getElementById("treeCharacter").value;
-
-console.log(heightSubmit, charSubmit);  // body...
+  var treeValue = {
+    height: document.getElementById("treeHeight").value,
+    character: document.getElementById("treeCharacter").value,
 }
+
+
+for ( var i = 0 ; i < treeValue.height; i++ ) {
+  var makeTree = " ".repeat(treeValue.height - i );
+  makeTree += treeValue.character.repeat((2*i) + 1 );
+  console.log(makeTree);
+}
+}
+
+
+
